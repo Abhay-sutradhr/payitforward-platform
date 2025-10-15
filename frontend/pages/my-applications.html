@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Applications - Pay It Forward</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html">
+                <i class="fas fa-hands-helping me-2"></i>Pay It Forward
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.html">
+                            <i class="fas fa-tachometer-alt me-1"></i>Dashboard
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="browse-jobs.html">
+                            <i class="fas fa-search me-1"></i>Browse Jobs
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="create-job.html">
+                            <i class="fas fa-plus-circle me-1"></i>Post Job
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="my-applications.html">
+                            <i class="fas fa-file-alt me-1"></i>Applications
+                        </a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-user-circle me-1"></i><span id="username-display">User</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="profile.html">
+                                <i class="fas fa-user me-2"></i>Profile
+                            </a></li>
+                            <li><a class="dropdown-item" href="credit-history.html">
+                                <i class="fas fa-coins me-2"></i>Credit History
+                            </a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="logout()">
+                                <i class="fas fa-sign-out-alt me-2"></i>Logout
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="container mt-4">
+        <div class="row mb-4">
+            <div class="col">
+                <h2><i class="fas fa-file-alt me-2"></i>My Applications</h2>
+                <p class="text-muted">Track your job applications and their status</p>
+            </div>
+        </div>
+
+        <!-- Application Status Summary -->
+        <div class="row mb-4">
+            <div class="col-md-3 mb-3">
+                <div class="card text-center bg-warning text-white">
+                    <div class="card-body">
+                        <i class="fas fa-clock stats-icon"></i>
+                        <h3 id="pending-count">0</h3>
+                        <p>Pending Review</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card text-center bg-success text-white">
+                    <div class="card-body">
+                        <i class="fas fa-check-circle stats-icon"></i>
+                        <h3 id="accepted-count">0</h3>
+                        <p>Accepted</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card text-center bg-danger text-white">
+                    <div class="card-body">
+                        <i class="fas fa-times-circle stats-icon"></i>
+                        <h3 id="rejected-count">0</h3>
+                        <p>Rejected</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card text-center bg-secondary text-white">
+                    <div class="card-body">
+                        <i class="fas fa-list stats-icon"></i>
+                        <h3 id="total-count">0</h3>
+                        <p>Total Applied</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="row mb-4">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-4 mb-2">
+                                <select class="form-select" id="statusFilter">
+                                    <option value="">All Status</option>
+                                    <option value="PENDING">Pending Review</option>
+                                    <option value="ACCEPTED">Accepted</option>
+                                    <option value="REJECTED">Rejected</option>
+                                    <option value="WITHDRAWN">Withdrawn</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <select class="form-select" id="categoryFilter">
+                                    <option value="">All Categories</option>
+                                    <option value="TECHNICAL">Technical</option>
+                                    <option value="PHYSICAL">Physical</option>
+                                    <option value="ACADEMIC">Academic</option>
+                                    <option value="CREATIVE">Creative</option>
+                                    <option value="HOUSEHOLD">Household</option>
+                                    <option value="TRANSPORTATION">Transportation</option>
+                                    <option value="OTHER">Other</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4 mb-2">
+                                <button class="btn btn-primary w-100" onclick="applyFilters()">
+                                    <i class="fas fa-filter me-1"></i>Apply Filters
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading State -->
+        <div id="loading-container" class="text-center py-5" style="display: none;">
+            <div class="loading"></div>
+            <p class="mt-3">Loading your applications...</p>
+        </div>
+
+        <!-- Applications Container -->
+        <div id="applications-container">
+            <!-- Applications will be loaded here -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="text-center py-5" style="display: none;">
+            <i class="fas fa-inbox fa-4x text-muted mb-3"></i>
+            <h4>No Applications Yet</h4>
+            <p class="text-muted">You haven't applied to any jobs yet. Browse available jobs and start helping others!</p>
+            <a href="browse-jobs.html" class="btn btn-primary">
+                <i class="fas fa-search me-1"></i>Browse Jobs
+            </a>
+        </div>
+    </div>
+
+    <!-- Application Details Modal -->
+    <div class="modal fade" id="applicationModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Application Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="modalContent">
+                    <!-- Modal content will be loaded here -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-danger" id="withdrawBtn" style="display: none;">
+                        <i class="fas fa-times me-1"></i>Withdraw Application
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+    <script src="../js/my-applications.js"></script>
+</body>
+</html>

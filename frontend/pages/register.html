@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Pay It Forward</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary" href="../index.html">
+                <i class="fas fa-hands-helping me-2"></i>Pay It Forward
+            </a>
+        </div>
+    </nav>
+
+    <!-- Registration Form -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                    <div class="card shadow-lg border-0">
+                        <div class="card-body p-5">
+                            <div class="text-center mb-4">
+                                <i class="fas fa-user-plus text-success" style="font-size: 3rem;"></i>
+                                <h2 class="fw-bold mt-3">Join Our Community!</h2>
+                                <p class="text-muted">Create your account and start helping others</p>
+                            </div>
+
+                            <!-- Alert for messages -->
+                            <div id="alert-container"></div>
+
+                            <form id="registerForm">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="username" class="form-label">Username*</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                            <input type="text" class="form-control" id="username" 
+                                                   placeholder="Choose a username" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="email" class="form-label">Email*</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-envelope"></i></span>
+                                            <input type="email" class="form-control" id="email" 
+                                                   placeholder="your@email.com" required>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label">Full Name*</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-id-card"></i></span>
+                                        <input type="text" class="form-control" id="fullName" 
+                                               placeholder="Enter your full name" required>
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label for="password" class="form-label">Password*</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                                            <input type="password" class="form-control" id="password" 
+                                                   placeholder="Create a strong password" required>
+                                            <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6 mb-3">
+                                        <label for="phone" class="form-label">Phone</label>
+                                        <div class="input-group">
+                                            <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                            <input type="tel" class="form-control" id="phone" 
+                                                   placeholder="Your phone number">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="address" class="form-label">Address (Optional)</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text"><i class="fas fa-map-marker-alt"></i></span>
+                                        <textarea class="form-control" id="address" rows="2" 
+                                                  placeholder="Your address (helps with local jobs)"></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- Welcome Bonus Info -->
+                                <div class="alert alert-info d-flex align-items-center mb-3">
+                                    <i class="fas fa-gift me-2"></i>
+                                    <div>
+                                        <strong>Welcome Bonus:</strong> Get 10 free credits when you join!
+                                    </div>
+                                </div>
+
+                                <div class="d-grid mb-3">
+                                    <button type="submit" class="btn btn-success btn-lg" id="registerBtn">
+                                        <i class="fas fa-rocket me-2"></i>Create Account
+                                    </button>
+                                </div>
+                            </form>
+
+                            <div class="text-center">
+                                <p class="text-muted">Already have an account? 
+                                    <a href="login.html" class="text-primary fw-bold">Sign in here</a>
+                                </p>
+                                <a href="../index.html" class="text-muted">
+                                    <i class="fas fa-arrow-left me-1"></i>Back to Home
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/api.js"></script>
+    <script src="../js/auth.js"></script>
+</body>
+</html>
