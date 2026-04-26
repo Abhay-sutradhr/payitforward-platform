@@ -41,7 +41,7 @@ This idea emerged from observing freelancing platforms, where even simple tasks 
 
 ## ⚙️ **Current Progress**
 
-Project completion: **~65%**
+Project completion: **~95%**
 
 ✅ Home Page  
 ✅ Main Page  
@@ -93,6 +93,7 @@ a real example of technology amplifying humanity 🌏.
 | 🗓️ 06-10-25 | Core backend and main pages completed |
 | 🗓️ 08-10-25 | Added account details update & password change |
 | 🗓️ 12-10-25 | Added "Applied Jobs" page with full functionality |
+| 🗓️ 21-02-26 | Made the pages efficient and work faster |
 | 🕓 Upcoming | Chat system integration, UI revamp |
 
 ---
