@@ -85,7 +85,7 @@ a real example of technology amplifying humanity 🌏.
 
 ---
 
-## 🛠️ **Project Updates**
+## 🛠️ Project Updates
 
 | Date | Update |
 |------|---------|
@@ -96,10 +96,25 @@ a real example of technology amplifying humanity 🌏.
 | 🗓️ 21-02-26 | Made the pages efficient and work faster |
 | 🕓 Upcoming | Chat system integration, UI revamp |
 
----
+## © Attribution & Usage
+
+This project was developed and maintained by **Abhay Sutradhar**.
+
+You are welcome to explore, learn from, and build upon this project. If you use this project, its ideas, or substantial portions of its code in your own work, please provide appropriate credit by linking back to this repository and acknowledging the original author.
+
+### How to Give Credit
+
+Example:
+
+> Based on the "Pay It Forward" project by Abhay Sutradhar.
+> Original repository: [https://github.com/Abhay-sutradhr/payitforward-platform/]
+
+Thank you for respecting the effort and time invested in this project. 🌱
 
 ## 🤝 Contributing
+
 Contributions are always welcome!
+...
 Follow these steps to contribute:
 
 Fork this repository
@@ -133,20 +148,3 @@ Create a Pull Request 🚀
 - ☕ Java JDK 11+
 - 🐬 MySQL Server
 - 📫 Postman (for API testing)
-
-### 🧱 Setup Instructions
-
-```bash
-# Clone repository
-git clone https://github.com/Abhaysutradhr/pay-it-forward.git
-cd pay-it-forward
-
-# Backend setup
-cd backend
-mvn spring-boot:run
-
-# Frontend setup
-cd ../frontend
-npm install
-npm run dev
-
